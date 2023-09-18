@@ -10,4 +10,4 @@ function m2(a, b) {
   return a + b;
 }
 
-module.exports = {someFunction,m2};
+module.exports = { someFunction, m2 };
