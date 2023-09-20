@@ -1,7 +1,8 @@
 class User {
-  constructor(name, address) {
+  constructor(name, address, age) {
     this.Name = name;
     this.Address = address;
+    this.Age = age;
   }
 }
 

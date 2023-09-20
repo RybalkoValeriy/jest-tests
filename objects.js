@@ -31,4 +31,8 @@ arr1 = [
 ];
 arr2 = [1, 2, 3, "111"];
 
-module.exports = { userObject, user1Obj, user2Obj, arr1, arr2 };
+function Fn(user, predicate){
+  return predicate(user);
+}
+
+module.exports = { Fn,userObject, user1Obj, user2Obj, arr1, arr2 };
