@@ -32,7 +32,16 @@ arr1 = [
 arr2 = [1, 2, 3, "111"];
 
 function Fn(user, predicate){
-  return predicate(user);
+  var result = predicate(user);
+  return result;
 }
 
-module.exports = { Fn,userObject, user1Obj, user2Obj, arr1, arr2 };
+function FnForSpy(){
+  return Math.random(1,100)
+}
+
+function FnForSpyDate(){
+  return Date.now;
+}
+
+module.exports = { FnForSpyDate, FnForSpy, Fn, userObject, user1Obj, user2Obj, arr1, arr2 };
