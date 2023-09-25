@@ -1,9 +1,9 @@
-const { User } = require("../User");
+const { User } = require("../user/User");
 const { Fn, FnForSpy, FnForSpyDate } = require("../objects");
 
 describe("learn mock here", () => {
   test("lest mock simple fun", () => {
-    var mockFn = jest.fn(user => user.Age > 18);
+    var mockFn = jest.fn((user) => user.Age > 18);
 
     var userLess18 = new User("Alex", "Dresden", 15);
     var userMore18 = new User("Alex2", "Dresden", 20);
@@ -20,24 +20,25 @@ describe("learn mock here", () => {
     expect(mockFn.mock.calls.length).toBe(3);
   });
 
-  test('test spy here', () => {
+  test("test spy here", () => {
     var expected = 2;
-    jest.spyOn(global.Math, 'random').mockReturnValue(expected);
+    jest.spyOn(global.Math, "random").mockReturnValue(expected);
 
     var res = FnForSpy();
 
     expect(res).toBe(expected);
   });
 
-  test('test spy with data ', () => {
-    function TestableFn(){
-      return Date.now;
+  test("test spy with data ", () => {
+    function getToDate() {
+      return new Date();
     }
-    var expected = new Date(2020,6,7);
+
+    var expected = new Date(2020, 6, 7);
     jest.useFakeTimers().setSystemTime(expected);
-    // jest.setSystemTime(expected);
-    var res = TestableFn();
-    
-    expect(res).toBe(expected);
+
+    var res = getToDate();
+
+    expect(res).toEqual(expected);
   });
 });

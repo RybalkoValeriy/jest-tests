@@ -1,8 +1,13 @@
 class InvalidArgumentError extends Error {
-    constructor(error) {
-        super(error);
-    }
+  constructor(error) {
+    super(error);
+  }
 }
 
-exports.InvalidArgumentError = InvalidArgumentError;
+class BusinessExceptionError extends Error {
+  constructor(error) {
+    super(error);
+  }
+}
 
+module.exports = { InvalidArgumentError, BusinessExceptionError };

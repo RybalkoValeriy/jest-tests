@@ -1,5 +1,5 @@
 const { userObject, user1Obj, user2Obj, arr1, arr2 } = require("../objects.js");
-const { User } = require("../User.js");
+const { User } = require("../user/User.js");
 const { InvalidArgumentError } = require("../exceptions.js");
 
 describe("Object comparations", () => {
